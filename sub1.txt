@@ -1,0 +1,115 @@
+Public Sub Update(Value As Integer)
+
+Dim x As Long
+Dim Cx As Long
+
+Dim Max As Long
+Dim Min As Long
+Dim per As Long
+
+Dim Oldval As Long
+
+Max = 1000
+Min = 0
+
+RaiseEvent ValueChange(Value, Val(txtoldpervalue.Text))
+
+
+Oldval = (((Val(txtoldpervalue.Text) / (Max - Min)) * 100) * UserControl.ScaleWidth) / 100
+x = Max - Min
+
+per = (Value / x) * 100
+
+x = UserControl.ScaleWidth
+
+
+Cx = (per * x) / 100
+
+per = UserControl.ScaleHeight
+
+If Value > Val(txtoldpervalue.Text) Then
+    Line (old, 0)-(Cx, per), QBColor(15), BF
+    
+Else
+    Line (Cx, 0)-(Oldval + (UserControl.ScaleWidth / 10), UserControl.ScaleHeight), UserControl.BackColor, BF
+    Line (Cx, per)-(Cx, per), QBColor(10), BF
+    
+ End If
+
+If Value = 0 Then
+    UserControl.Cls
+End If
+
+txtoldpervalue.Text = Value
+
+End Sub
+
+
+
+
+Public Sub Update(Value As Integer)
+
+
+Dim x As Long
+Dim Cx As Long
+
+Dim Max As Long
+Dim Min As Long
+Dim per As Long
+Dim n As Long
+Dim Oldval As Long
+
+Max = 1000
+Min = 0
+
+RaiseEvent ValueChange(Value, Val(txtoldpervalue.Text))
+
+
+Oldval = (((Val(txtoldpervalue.Text) / (Max - Min)) * 100) * UserControl.ScaleWidth) / 100
+x = Max - Min
+
+per = (Value / x) * 100
+
+x = UserControl.ScaleWidth
+Cx = (per * x) / 100
+per = UserControl.ScaleHeight
+n = UserControl.ScaleWidth
+If Value > Val(txtoldpervalue.Text) Then
+    Line (n - old, 0)-(n - Cx, per), QBColor(15), BF
+Else
+    Line (n - Cx, 0)-(n - Oldval - (n / 10), per), UserControl.BackColor, BF
+ End If
+
+If Value = 0 Then
+    UserControl.Cls
+End If
+
+txtoldpervalue.Text = Value
+End Sub
+
+
+Private Sub UserControl_MouseMove(Button As Integer, Shift As Integer, X As Single, y As Single)
+    Dim b As PgButton
+    Dim per As Integer
+    Dim x1 As Single
+    Dim y1 As Integer
+    If Button = 0 Then b = Pgnone
+    If Button = 1 Then
+        'b = Pgright
+        x1 = X
+        per = ((x1) / UserControl.ScaleWidth) / 100
+        y1 = per * ((PgMax - PgMin) / 100)
+        per = PgMax - y1
+        RaiseEvent click(per)
+    End If
+    
+    'If Button = 1 Then
+    '    b = Pgleft
+    '    x1 = X
+    '    per = (x1 / UserControl.ScaleWidth) * 100
+    '    y1 = per * ((PgMax - PgMin) / 100)
+    '    Updater y1, PgMode
+     '   RaiseEvent click(y1)
+    'End If
+    RaiseEvent MouseMove(b, X, y)
+End Sub
