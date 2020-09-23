@@ -1,0 +1,25 @@
+per =?
+
+
+y =     x
+       -------  *  100
+          z     	
+
+y = per
+
+x = current x
+y = tot x
+
+
+current x
+
+
+y =     x
+       -------  *  100
+          z     	
+
+
+x = y*x
+     ------
+      100
+

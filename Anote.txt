@@ -1,0 +1,42 @@
+
+                          ProgYbar
+                        Version 1.0
+  Copyright 1998-2000 Bloom & Oasis Corp
+                All Rights Not Reserved
+
+                              By
+                      Imthiaz Rafiq
+              http://nutsnbolts.8m.com/
+                imthiazrafiq@hotmail.com
+   
+---------------------------------------------------------------------
+---------------------- Progybar Note -----------------------
+---------------------------------------------------------------------
+This progYbar is like a standard progress bar with some more features.
+
+We can use progYbar as progress bar and as a slider control.
+
+To increase or decrease the progress value use Drawbar() method.
+
+To use as slider control use the click() event.
+
+Whenever the value of the bar is changed valuechanged() method get focused.
+
+There is an Error() Event in which we can trap the progYbar errors.
+
+Whenever the mouse is moved over the progYbar the MouseHover() Event which returns the currentX, currentY and the Corresponding slider value.
+
+---------------------------------------------------------------------We hope our ProgYbar will me more useful to your work. If you feel like to change some part to improve this control be don't hesistate to mail me. We are at your service.
+
+---------------------------------------------------------------------
+
+---------------------------------------------------------------------
+------------------------  End ------------------------------------ ---------------------------------------------------------------------
+        This Ocx is Free For Distribution
+             Don't hesitate to mail us
+       Thank's for Downloading this Ocx
+---------------------------------------------------------------------
+          Thanks for reading this note.
+            Sorry for my wrong English.
+          Press Backspace to close this box.
+---------------------------------------------------------------------
